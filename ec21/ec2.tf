@@ -1,13 +1,13 @@
 resource "aws_instance" "terraform" {
   ami           = "ami-0220d79f3f480ecf5"
   instance_type = "t3.micro"
-  vpc_security_group_ids = [aws_security_group.allow.id]
+  vpc_security_group_ids = [aws_security_group.port.id]
   tags = {
     name = "Terraform"
     terraform = "true"
   }
 }
-resource "aws_security_group" "allow" {
+resource "aws_security_group" "port" {
   name = "allow-all"
 
   egress {
@@ -23,6 +23,6 @@ resource "aws_security_group" "allow" {
     cidr_blocks      = ["0.0.0.0/0"] 
   }
 tags = {
-    name= "allow-all"
+    name= "Port"
 }
 }
