@@ -8,7 +8,7 @@ resource "aws_instance" "terraform" {
   }
 }
 resource "aws_security_group" "port" {
-  name = "allow-all"
+  name = "Bhagya"
 
   egress {
     from_port        = 0
